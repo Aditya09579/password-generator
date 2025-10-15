@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Secure Password Generator</h1>
+            <p>Create strong, random passwords to keep your accounts safe</p>
+        </header>
+
+        <main class="generator-container">
+            <div class="password-display">
+                <input type="text" id="password-output" readonly>
+                <button id="copy-btn">📋 Copy</button>
+            </div>
+
+            <div class="controls">
+                <div class="length-control">
+                    <label for="length-slider">Password Length: <span id="length-value">12</span></label>
+                    <input type="range" id="length-slider" min="4" max="50" value="12">
+                </div>
+
+                <div class="character-options">
+                    <label><input type="checkbox" id="uppercase" checked> Uppercase Letters (A-Z)</label>
+                    <label><input type="checkbox" id="lowercase" checked> Lowercase Letters (a-z)</label>
+                    <label><input type="checkbox" id="numbers" checked> Numbers (0-9)</label>
+                    <label><input type="checkbox" id="symbols" checked> Symbols (!@#$%^&*)</label>
+                </div>
+
+                <div class="exclude-section">
+                    <label for="exclude-chars">Exclude Characters:</label>
+                    <input type="text" id="exclude-chars" placeholder="e.g., 0O1l">
+                </div>
+
+                <button id="generate-btn" class="generate-button">Generate Password</button>
+            </div>
+
+            <div class="password-strength">
+                <h3>Password Strength: <span id="strength-text">-</span></h3>
+                <div class="strength-bar">
+                    <div id="strength-indicator" class="strength-indicator"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🔒 Generated passwords are created locally and never stored</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
